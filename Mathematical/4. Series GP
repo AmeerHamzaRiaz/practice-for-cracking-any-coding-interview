@@ -1,0 +1,19 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void gp_Term(int a,int b, int n) {
+	float r = (float)b/a;
+	cout << a*(pow(r,n-1));
+}
+
+int main() {
+	int T;
+	cin >> T;
+	while(T--){
+		int a, b, n;
+		cin >> a >> b >> n;
+		gp_Term(a,b,n);
+	}
+	return 0;
+}
