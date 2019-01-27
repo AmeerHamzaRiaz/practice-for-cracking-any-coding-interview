@@ -31,6 +31,25 @@ void InsertNodeAtEnd(int val){
 	
 }
 
+void DeleteNodeAtBegin(){
+	Node *temp = head;
+	head = temp->next;
+	temp->next = NULL;
+	delete temp;
+}
+
+void DeleteNodeAtEnd(){
+	Node *temp = head;
+	Node *back = NULL;
+	while(temp->next!=NULL){
+		back = temp;
+		temp = temp->next;
+	}
+	back->next = NULL;
+	delete temp;
+	delete back;
+}
+
 void InsertNodeAtPosition(int val,int pos){
 	Node *newNode = new Node();
 	newNode->next = NULL;
@@ -62,10 +81,11 @@ void PrintNode(){
 int main(void) 
 { 
   head = NULL;
-  InsertNodeAtPosition(1,1);
+  InsertNodeAtPosition(4,1);
+  InsertNodeAtPosition(3,1);
   InsertNodeAtPosition(2,1);
-  InsertNodeAtPosition(4,2);
-  InsertNodeAtPosition(3,3);
+  InsertNodeAtPosition(1,1);
+  DeleteNodeAtBegin();
   PrintNode();
   return 0; 
 } 
